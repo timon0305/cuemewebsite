@@ -1,0 +1,62 @@
+.shining-text-animation {
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  font-family: Hack, sans-serif;
+  background: linear-gradient(90deg, 	#fff, #fff,  #fff);
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 15s linear infinite;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
+.second-text {
+  font-family: ui-sans-serif;
+  font-size: 34px;
+  margin-top:30px;
+  text-align: center;
+  font-weight:bold;
+  color:white;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  animation: typing 5s steps(22), blink 1.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  transition: .5s linear
+}
+
+.second-text:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #000,
+  0 0 20px #fff,
+  0 0 40px #fff;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+

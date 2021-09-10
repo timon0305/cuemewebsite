@@ -1,0 +1,37 @@
+.grid-player-detail-image {
+    display              : grid;
+    grid-template-columns: 130px 1fr;
+    grid-column-gap      : 15px;
+    grid-row-gap         : 5px;
+    border               : 1px solid #dddddd;
+    padding              : 5px;
+}
+
+.grid-player-detail {
+    display              : grid;
+    grid-template-columns: 100px 1fr;
+    grid-column-gap      : 55px;
+    grid-row-gap         : 5px; 
+    padding: 7px;   
+}
+
+.profilepic {
+    width        : 120px;
+    height       : 120px;
+    margin       : 0 auto;
+}
+
+.dialog-sm {
+    width : 900px !important;
+    height: auto;
+    margin: 1.75rem auto;
+}
+
+
+
+
+
+
+/**=====================
+    60. RTL CSS Ends
+==========================**/

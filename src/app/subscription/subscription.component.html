@@ -1,0 +1,100 @@
+
+    <ng-container *ngIf="isShowModal">
+        <div class="modal " style="display:block;backdrop-filter: blur(2px);" role="dialog" data-keyboard="false"
+            data-backdrop="static" id="myModal">
+            <div class=" modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" (click)="isShowModal=false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <form style="width:100%;padding:16px" class="auth-form">
+                                <div class="form-group">
+                                   <label for="exampleInputName1">Card Number</label>
+                                   <i class="fa fa-credit-card"></i>
+                                   <input required="" name="cardNumber"  type="text"
+                                      class="form-control" id="exampleInputName1" placeholder="Card Number">
+                                </div>
+                                <div class="row">
+                                <div class="form-group col">
+                                   <label for="exampleInputEmail12">Expiry Date</label>
+                                   <input required="" name="expiryDate"  class="form-control"
+                                      id="exampleInputEmail12" type="date" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group col">
+                                    <label for="exampleInputName1">CVV</label>
+                                    <i class="fa fa-credit-card" style="margin-left: 10px;"></i>
+                                    <input required="" name="cvv"  type="text"
+                                       class="form-control" id="exampleInputName1" placeholder="CVV">
+                                 </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail123">Card Holder Name</label>
+                                    <i class="fa fa-user"></i>
+                                    <input required="" name="cardHolderName"  class="form-control"
+                                       id="exampleInputEmail123"  placeholder="Card Holder Name">
+                                 </div>
+ 
+                             </form>
+                                         </div>
+                    
+
+                                <div style=" display:flex;justify-content:space-between;padding:16px" class="row mt-4">
+                                    <div style="display: flex;flex-direction: column;">
+                                        <p style="margin:0;color:black">Do you want to save this card?</p>
+                                        <span style="color: gray;margin-top:2px">If yes then click save button</span>
+                                        </div>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label" for="customSwitch1"></label>
+                                          </div>                                    
+                                </div>
+
+
+                                <div style=" display:flex;justify-content:space-between;padding:16px" class="row">
+                                    <div style="display: flex;flex-direction: column;">
+                                        <p style="margin:0;color:black">Do you want to set autopayment for this card?</p>
+                                        <span style="color: gray;margin-top:2px">If yes then click save button</span>
+                                        </div>
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                            <label class="custom-control-label" for="customSwitch2"></label>
+                                          </div>                                    
+                                </div>
+                                <div class="form-group mb-0 text-center">
+                                    <button class="btn-theme" type="submit" >
+                                       Continue</button>
+                                 </div>
+                     
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+<div class="page-wrapper">
+    <div class="auth-bg">
+        <div class="authentication-box">
+            <div  class="card mt-4" *ngFor="let subscription of subscriptions">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h4>{{subscription.name}}</h4>
+                    </div>
+                    <div class="text-center">
+                        <h4>{{subscription.amount}} / {{subscription.validityMeasurement}}</h4>
+                    </div>
+                    <div class="text-center">
+                        <h4>{{subscription.description}}</h4>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button (click)="openPaymentModal()" class="btn-theme" >Pay Now</button>
+                           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

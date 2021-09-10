@@ -1,0 +1,95 @@
+<!--Nav start-->
+<nav class="navbar navbar-expand-lg  theme-nav fixed-top" [class.darkHeader]="darkHeader">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="'/home'" href="#home" [pageScrollOffset]="75" pageScroll><img src="assets/images/logo.png" alt="logo"
+        style="height: 40px;width: 40px;vertical-align: sub !important;"><span
+        style="color: #fff;font-size:42px">&nbsp;CueME</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-align-justify" aria-hidden="true"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainmenu">
+      <ul class="navbar-nav" id="mymenu" style="margin: auto !important;">
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="'/home'" href="#home" [pageScrollOffset]="75" pageScroll>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/aboutus'" href="#about" >about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" href="#feature" [pageScrollOffset]="75" pageScroll>features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/subscribe'" href="#subscribe" [pageScrollOffset]="75"
+            pageScroll>sign in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" href="#screenshots" [pageScrollOffset]="75"
+            pageScroll>screenshots</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" href="#team" [pageScrollOffset]="75" pageScroll>team</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" href="#contact" [pageScrollOffset]="75" pageScroll>contact us</a>
+        </li>
+        <!-- <li class="nav-item ">
+          <a class="nav-link" [routerLink]="'/privacypolicy/web'" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}">Privacy Policy</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="'/termscondition/web'" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}">Terms & condition</a>
+        </li> -->
+        <!-- <li class="nav-item ">
+          <a class="nav-link" [routerLink]="'/privacypolicy'" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}">Privacy Policy</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="'/termscondition'" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}">Terms & condition</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a href="#news" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [pageScrollOffset]="75" pageScroll>Policies</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="'/privacypolicy/web'" [routerLinkActive]="'active'"
+                [routerLinkActiveOptions]="{exact: true}">Policy</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" [routerLink]="'/termscondition/web'" [routerLinkActive]="'active'"
+                [routerLinkActiveOptions]="{exact: true}">Terms</a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a href="#news" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [pageScrollOffset]="75" pageScroll>Blog</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/list'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">blog list</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/details'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">blog details</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/left-sidebar'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">leftsidebar</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/right-sidebar'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">rightsidebar</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/details-left-sidebar'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">details leftsidebar</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/blog/details-right-sidebar'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">details rightsidebar</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other Page</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/sign-in'">Sign In</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/sign-up'">Sign Up</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/forget-password'">Forget Password</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/thank-you'">Thank You</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/review'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Review</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/faq'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/coming-soon'">Coming Soon</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/download'">Download</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/request'">Request Demo</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="'/pages/404'">404</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Nav end -->

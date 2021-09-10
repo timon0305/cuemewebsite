@@ -1,0 +1,124 @@
+<!-- slider-section -->
+<section class="slide-bg" id="home">
+   <div class="animation-circle">
+      <i></i>
+      <i></i>
+      <i></i>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="d-flex-1">
+               <div class="slide-text" style="margin-top:10px">
+                  <div>
+                     <div>
+                        <h3 style="color:white; font-size: 28px; text-align: center" class="shining-text-animation">
+                           Play real pool anywhere with anyone.  Cancel anytime.
+                        </h3>
+                        <h4 style="color:white; text-align: center">
+                           Ready to play?  Enter your email address to create or restart your membership.</h4>
+
+                           <form class="auth-form" style="margin-top: 10px;">
+                              <div class="row" style="justify-content: center;">
+                              <div class="form-group">
+                                 <label for="exampleInputName1">Email</label>
+                                 <i class="fa fa-envelope"></i>
+                                 <input required="" name="email" id="" [formControl]="startUpForm.controls['email']" class="form-control"
+                                    id="exampleInputName1" placeholder="Email">
+                                    <div *ngIf="startUpForm.controls.email.touched && startUpForm.controls.email.errors?.email"
+                                    class="text text-danger">Invalid Email</div>
+                                 <div *ngIf="startUpForm.controls.email.touched && startUpForm.controls.email.errors?.required"
+                                    class="text text-danger">Email is required</div>
+                              </div>
+                              <div class="form-group mb-0" style="margin-left:10px;">
+                                 <button class="btn-theme" [disabled]="!startUpForm.valid" type="submit" (click)="start()">Get
+                                    Started</button>
+                              </div>
+                           </div>
+                           </form>
+                        <!-- <a href="https://cueme.com/#/subscribe"><img
+                              src="assets/images/app1.png" alt="app1" class="img-fluid" data-tilt
+                              data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"></a>
+                        <a href="https://cueme.com/#/subscribe"><img src="assets/images/app2.png" alt="app2" class="img-fluid" data-tilt
+                              data-tilt-perspective="50" data-tilt-speed="350" data-tilt-max="1.8"></a> -->
+                     </div>
+
+                     <b>
+                        <h1 style="font-size: 30px; margin-top:30px;text-align: center" class="an-text1">
+
+                        </h1>
+                        <span class="wrapper-text">
+                          <i class="second-text">
+                           <span>B</span>
+                          <span>r</span>
+                          <span>i</span>
+                          <span>n</span>
+                          <span>g</span>
+                          <span>i</span>
+                          <span>n</span>
+                          <span>g</span>
+                          <span>&nbsp;</span>
+                          <span>p</span>
+                          <span>e</span>
+                          <span>o</span>
+                          <span>p</span>
+                          <span>l</span>
+                          <span>e</span>
+                          <span>&nbsp;</span>
+                          <span>a</span>
+                          <span>n</span>
+                          <span>d</span>
+                          <span>&nbsp;</span>
+                          <span>p</span>
+                          <span>l</span>
+                          <span>a</span>
+                          <span>c</span>
+                          <span>e</span>
+                          <span>s</span>
+                          <span>&nbsp;</span>
+                          <span>t</span>
+                          <span>o</span>
+                          <span>g</span>
+                          <span>e</span>
+                          <span>t</span>
+                          <span>h</span>
+                          <span>e</span>
+                          <span>r</span>
+                          <span>!</span>
+                        </i>
+                        </span>
+                     </b>
+                     <br>
+                     <h4 style="color:#f5f5f5;text-align: center">The world's best billiards app to play real pool with real players in person or anywhere
+                        anytime with in app live video to live video. We are building a community of a million people
+                        around the globe who want to play more, play better!</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="home-right">
+               <div class="mobile-slid">
+                  <img src="assets/images/top-mobile.png" alt="top1" class="img-fluid">
+               </div>
+               <div class="profile-msg" style="height:70px">
+                  <img src="assets/images/top2.png" alt="top2" class="img-fluid">
+               </div>
+               <div class="awesome">
+                  <img src="assets/images/top3.png" alt="top3" class="img-fluid">
+               </div>
+               <div class="profile-1">
+                  <img src="assets/images/top4.png" alt="top4" class="img-fluid">
+               </div>
+               <div class="emoji">
+                  <img src="assets/images/top5.png" alt="top5" class="img-fluid">
+               </div>
+               <div class="profile-2">
+                  <img src="assets/images/top1.png" alt="top1" class="img-fluid">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- end slider section -->

@@ -1,0 +1,65 @@
+<div class="page-wrapper">
+    <div class="auth-bg">
+        <div class="authentication-box">
+            <div class="text-center"><img style="height:200px;" src="assets/images/logo.png" alt=""></div>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h4>LOGIN</h4>
+                    </div>
+                    <form class="theme-form" #LoginForm="ngForm">
+                        <div class="form-group">
+                            <label class="col-form-label pt-0">Username</label>
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Username"
+                                [(ngModel)]="emailId" #Email="ngModel" required>
+                            <!-- pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" -->
+                            <div *ngIf="Email.errors?.required && Email.touched" class="text text-danger mt-1">
+                                Username is required
+                            </div>
+                            <!-- <div *ngIf="Email.touched && Email.hasError('pattern')" class="text text-danger mt-1">
+                                Invalid Email
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Password</label>
+                            <input class="form-control" type="password" id="password" name="password"
+                                placeholder="Password" [(ngModel)]="password" #Pass="ngModel" required>
+                            <div *ngIf="Pass.errors?.required && Pass.touched" class="text text-danger mt-1">
+                                Password is required
+                            </div>
+                        </div>
+                        <!-- <div class="checkbox p-0">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1">Remember me</label>
+                        </div> -->
+                        <div class="form-group form-row mt-3 mb-0">
+                            <button class="btn btn-primary btn-block btn-lg" [disabled]="!LoginForm.valid"
+                                (click)="login(LoginForm)" type="submit"><span>Login</span>
+                            </button>
+                        </div>
+                        <!-- <div class="login-divider"></div> -->
+                        <!-- <div class="social mt-3">
+                            <div class="form-group btn-showcase d-flex">
+                                <button class="btn social-btn btn-fb d-inline-block" (click)="loginFacebook()">
+                                    <i class="fa fa-facebook"></i>
+                                </button>
+                                <button class="btn social-btn btn-twitter d-inline-block" (click)="loginTwitter()">
+                                    <i class="fa fa-twitter"></i>
+                                </button>
+                                <button class="btn social-btn btn-google d-inline-block" (click)="loginGoogle()">
+                                    <i class="fa fa-google"></i>
+                                </button>
+                            </div>
+                        </div> -->
+                    </form>
+                    <div style="padding-top: 15px;">
+                        <a [routerLink]="['/forgotpassword']">Forgot your password?</a>
+                    </div>
+                    <div style="padding-top: 15px;"> Don't have an account?
+                        <a [routerLink]="['/signup']">Register now.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

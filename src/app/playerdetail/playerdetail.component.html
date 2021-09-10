@@ -1,0 +1,212 @@
+<!-- Container-fluid starts -->
+<title>Player Detail</title>
+<div style="overflow-y: auto;overflow-x: hidden; margin-left: 5%; margin-right:5%">
+  <div class="container-fluid">
+    <div class="page-header" style="padding-top: 10px;padding-bottom: 10px;">
+    </div>
+  </div>
+  <div class="text-center"><img style="height:200px;" src="assets/images/logo.png" alt=""></div>
+  <div class="container-fluid pr-0 pr-0">
+    <div class="card mt-4">
+      <div class="text-center">
+        <h4 style="color:black;">Profile Info</h4>
+    </div>
+            <div style="">
+              <div class="grid-player-detail-image">
+                <!-- <div class="item1">
+                  <img class="profilepic" *ngIf="(user_photo) ;else defaultProfileImage" [src]="user_photo">
+                  <ng-template #defaultProfileImage>
+                    <img class="profilepic" src="../../../../assets/images/user/userprofile.png" />
+                  </ng-template>
+                </div> -->
+                <div class="item2">
+                  <div class="grid-player-detail">
+                    <div class="item3" style="font-weight: 600;">
+                      Name
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.firstName}} {{playerDetail?.LastName}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      Email
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.email}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      Gender
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.gender}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      Contact No
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.contactNo1}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      User Chips
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.userChips}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      User Rank In Person
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.userRankInPerson}}
+                    </div>
+                    <div class="item3" style="font-weight: 600;">
+                      User Rank In AnyWhere
+                    </div>
+                    <div class="item3">
+                      {{playerDetail?.userRankAnywhere}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top: 10px;border: 1px solid #dddddd;"
+                *ngIf="playerDetail?.userAddress?.length>0">
+                <h4 style="font-weight: 600;padding:5px;border-bottom: 1px solid #ddd;">User Address</h4>
+                <div style="padding:10px;">
+                  <div *ngFor="let add of playerDetail?.userAddress"
+                    style="padding:10px;border-bottom: 1px solid #ddd;">
+                    <div *ngIf="add.addressTypeName">{{add.addressTypeName}},</div>
+                    <div *ngIf="add.contactPersonName" style="padding-bottom: 10px; padding-top: 10px;">
+                      {{add.contactPersonName}},</div>
+                    <span *ngIf="add.label">{{add.label}},</span>
+                    <span *ngIf="add.addressLine1">{{add.addressLine1}}</span>
+                    <span *ngIf="add.addressLine2">,{{add.addressLine2}}</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <ngx-datatable style="cursor: pointer;" *ngIf="playerDetail?.subscriptions?.length>0"
+                class="bootstrap" [rows]="playerDetail.subscriptions" [columnMode]="'force'" [headerHeight]="50"
+                [footerHeight]="50" [rowHeight]="'auto'" [limit]="13"
+                style="">
+                <ngx-datatable-column name="subscriptionName" [width]="200">
+                  <ng-template let-column="column" ngx-datatable-header-template>
+                    <span style="font-size: 16px;font-weight: 700;">Subscription Name</span>
+                  </ng-template>
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{row.subscriptionName}}
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="subscriptionValidityMeasurement" [width]="200">
+                  <ng-template let-column="column" ngx-datatable-header-template>
+                    <span style="font-size: 16px;font-weight: 700;">Period</span>
+                  </ng-template>
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{row.validity}} Days
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="subscriptionAmount" [width]="200">
+                  <ng-template let-column="column" ngx-datatable-header-template>
+                    <span style="font-size: 16px;font-weight: 700;">Amount</span>
+                  </ng-template>
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{row.subscriptionAmount | currency:'USD':'symbol'}}
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="fromDate" [width]="200">
+                  <ng-template let-column="column" ngx-datatable-header-template>
+                    <span style="font-size: 16px;font-weight: 700;">From - To</span>
+                  </ng-template>
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{row.fromDate | date:'MM/dd/yyyy'}} - {{row.toDate | date:'MM/dd/yyyy'}}
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="id" [width]="200">
+                      <ng-template let-column="column" ngx-datatable-header-template>
+                        <span style="font-size: 16px;font-weight: 700;">Action</span>
+                      </ng-template>
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                        <button style="margin-right: 10px; padding-top: 0px; padding-bottom: 4px;" class="btn btn-primary action-btn" type="button"
+                          placement="top" title="Remove Subscription" (click)="deleteSubscription(row)">
+                          Cancel
+                        </button>
+                      </ng-template>
+                    </ngx-datatable-column>
+              </ngx-datatable>
+            </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends -->
+
+<ng-container *ngIf="isSubscriptionDialog">
+  <div class="modal" style="display:block;backdrop-filter: blur(2px);" role="dialog" data-keyboard="false"
+    data-backdrop="static">
+    <div class="dialog-sm modal-dialog-centered ">
+      <div class="modal-content">
+        <form #Subscription="ngForm">
+          <div class="modal-header">
+            <div class="modal-title">
+              <i class="icon-help p-0"></i>
+              <span style="padding-left: 5px;">Add Subscription</span>
+            </div>
+            <button type="button" class="close" aria-label="Close" (click)="closeSubscriptionDialog()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: calc(100vh - 210px);overflow-y: auto;overflow-x: hidden;">
+            <div class="dialog-body">
+              <div class="row mt-1">
+                <div class="col-sm-3">
+                  <label class="col-form-label">Select Subscription</label>
+                </div>
+                <div class="col-sm-9">
+                  <select name="cSub" class="form-control" style="display: inline;width: 90%;"
+                    [(ngModel)]="selectedSubscription" required #RId="ngModel">
+                    <option *ngFor="let sub of subscriptions" [ngValue]="sub">
+                      {{sub.name}}
+                    </option>
+                  </select>
+                  <div *ngIf="RId.invalid && (RId.dirty || RId.touched)" class="text text-danger mt-1">
+                    Subscription is required
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col-sm-3">
+                  <label class="col-form-label">Start Date</label>
+                </div>
+                <div class="col-sm-9">
+                  <input class="form-control" style="width: 50%;display: inline;" placeholder="mm/dd/yyyy" name="dpp"
+                    [minDate]="couponDatefrom" outsideDays="visible" [(ngModel)]="fromDate" ngbDatepicker (keyup)="validateDate()"
+                    #ff="ngbDatepicker" required #Vdate="ngModel">
+                  <div class="input-group-append" style="display: inline;">
+                    <button class="btn calendar" style="display: inline;" (click)="ff.toggle()" type="button"><i
+                        class="fa fa-calendar"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col-sm-3">
+                  <label class="col-form-label">Payment Ref Number</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" id="FaqQuestionedit" class="form-control" name="Faqquestion"
+                    placeholder="(Optional)" [(ngModel)]="payRef" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary ml-1" type="button" placement="top" title="save"
+              [disabled]="!Subscription.valid" (click)="saveSubscription(Subscription)">
+              Save
+            </button>
+            <button class="btn btn-primary" type="button" placement="top" title="cancel"
+              (click)="closeSubscriptionDialog()">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-container>

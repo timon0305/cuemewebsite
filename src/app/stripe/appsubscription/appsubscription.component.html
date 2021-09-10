@@ -1,0 +1,47 @@
+<div class="page-wrapper">
+    <div class="">
+        <div class="authentication-box" style="width: auto;max-width: 460px;" *ngIf="isValidateToken">
+            <div class="mt-4">
+                <div class="text-center card">
+                    <div class="card-body">
+                        <input type="text" class="input-focus" [(ngModel)]="promocode" style="height:40px; margin-right:10px"
+                            placeholder="Enter promo code" class="d-inline" />
+                        <button class="btn btn-primary d-inline" [disabled]="!promocode"
+                            (click)="validatePromoCode(promocode)" type="submit" style="height:40px;margin-right: 5px;"><span
+                                style="font-family: sans-serif;;">Apply</span>
+                        </button>
+                        <!-- <button class="btn btn-primary d-inline" [disabled]="!promocode"
+                            (click)="clearCouponCode()" type="submit" style="height:40px;"><span
+                                style="font-family: sans-serif;;">Clear</span>
+                        </button> -->
+                    </div>
+                </div>
+                <div class="card mt-4" *ngFor="let data of subscriptions">
+                    <div class="card-body">
+                        <div class="mt-2"
+                            style="text-align: center;font-size: 18px;font-weight: 600;font-family: sans-serif;;">
+                            {{data.name}}
+                        </div>
+                        <div class="mt-2"
+                            style="text-align: center;font-size: 22px;font-weight: 600;color: #AB47BC;font-family: sans-serif;;">
+                            {{data.amount | number:'0.2-2'}}/{{data.validityMeasurement}}</div>
+                            <div class="mt-2"
+                            style="text-align: center;font-size: 18px;font-weight: 600;font-family: sans-serif;;">
+                            {{data.description}}
+                        </div>
+                        <div class="mt-2" style="text-align: center;">
+                            <button class="btn-theme" (click)="checkCardAvailable(data)"
+                                type="submit"><span style="font-family: sans-serif;;">Join</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="authentication-box" *ngIf="!isValidateToken">
+            <div class="text-center">
+                <span style="color:#ff0000;font-size:24px;font-family: sans-serif;;">Your session is invalid Or expired!</span>
+            </div>
+        </div> -->
+    </div>
+</div>
